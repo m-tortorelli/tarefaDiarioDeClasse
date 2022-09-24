@@ -1,63 +1,33 @@
 package org.example;
 
-import java.util.ArrayList;
+
+
+
+import java.util.HashMap;
+import java.util.LinkedHashMap;
+import java.util.List;
+import java.util.Map;
 
 
 public class Classe {
-    public static void main(String[] args) {
-        ArrayList<String> chamada = new ArrayList<>();
-        ArrayList<String> datas = new ArrayList<>();
+        public static void main(String[] args){
+        Map<String, List<String>> presenca = new LinkedHashMap<>();
 
-        datas.add("Aluno/Data:");
-        datas.add(" ");
-        datas.add(" ");
-        datas.add(" ");
-        datas.add("01/09");
-        datas.add("|");
-        datas.add(" ");
-        datas.add(" ");
-        datas.add(" ");
-        datas.add("02/09");
-        datas.add("|");
-        datas.add(" ");
-        datas.add(" ");
-        datas.add(" ");
-        datas.add("03/09");
-        datas.add(" |");
-        datas.add(" ");
-        datas.add(" ");
-        datas.add(" ");
-        datas.add("04/09");
-        datas.add(" |");
-        datas.add(" ");
-        datas.add(" ");
-        datas.add(" ");
-        datas.add("05/09");
+        presenca.put("19/09",List.of("Louise", "Elizabeth", "Regina"));
+        presenca.put("20/09",List.of("Aline", "Louise", "Elizabeth", "Samanta", "Regina"));
+        presenca.put("21/09",List.of("Aline", "Louise", "Samanta", "Regina"));
+        presenca.put("22/09",List.of("Aline", "Louise", "Elizabeth", "Samanta", "Regina"));
+        presenca.put("23/09",List.of("Samanta", "Regina"));
+
+        System.out.println("--------------- Lista de Presenca ---------------");
+
+        for(Map.Entry<String, List<String>> datas : presenca.entrySet()){
+                System.out.println(datas.getKey()+" "+datas.getValue());
 
 
-        for (String dia: datas){
-            System.out.print(dia);
+        }
+                System.out.println("-------------------------------------------------");
+
         }
 
-        chamada.add("  |");
-        chamada.add("__________________________________________________________ |");
-        chamada.add("Aline:        Pre  |   Aus  |   Pre   |   Pre   |   Pre    |");
-        chamada.add("__________________________________________________________ |");
-        chamada.add("Elizabeth:    Pre  |   Pre  |   Pre   |   Pre   |   Pre    |");
-        chamada.add("__________________________________________________________ |");
-        chamada.add("Louise:       Pre  |   Aus  |   Pre   |   Aus   |   Aus    |");
-        chamada.add("__________________________________________________________ |");
-        chamada.add("Samanta:      Aus  |   Aus  |   Pre   |   Pre   |   Pre    |");
-        chamada.add("__________________________________________________________ |");
-        chamada.add("Regina:       Aus  |   Aus  |   Pre   |   Aus   |   Pre    |");
-        chamada.add("__________________________________________________________ |");
-
-        for (String nome : chamada){
-            System.out.println(nome);
     }
-
-
-
-
-    }
-}
